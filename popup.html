@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Refresh App</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="top">
+        <h1>Refresh App</h1>
+        <span id="status-chip" class="status status-off">Auto Off</span>
+      </header>
+
+      <section class="actions">
+        <button id="hard-refresh" class="button primary" type="button">Hard Refresh</button>
+        <button id="normal-refresh" class="button" type="button">Normal Refresh</button>
+      </section>
+
+      <section class="auto">
+        <div class="field">
+          <label for="interval-input">Interval (sec)</label>
+          <input id="interval-input" type="number" min="1" step="1" value="5" />
+        </div>
+        <div class="presets" aria-label="Quick intervals">
+          <button class="preset" data-interval="5" type="button">5s</button>
+          <button class="preset" data-interval="10" type="button">10s</button>
+          <button class="preset" data-interval="30" type="button">30s</button>
+        </div>
+        <button id="toggle-auto" class="button full" type="button">Start Auto Refresh</button>
+      </section>
+
+      <p id="message" class="message" hidden></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
