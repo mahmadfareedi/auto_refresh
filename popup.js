@@ -5,6 +5,7 @@ const intervalInput = document.getElementById('interval-input');
 const statusChip = document.getElementById('status-chip');
 const presetButtons = Array.from(document.querySelectorAll('.preset'));
 const messageEl = document.getElementById('message');
+const shortcutBtn = document.getElementById('shortcut-btn');
 
 let activeTabId = null;
 let isAutoRefreshing = false;
@@ -217,3 +218,16 @@ intervalInput.addEventListener('change', handleIntervalChange);
 presetButtons.forEach((button) => button.addEventListener('click', handlePresetClick));
 
 document.addEventListener('DOMContentLoaded', init);
+
+const openShortcutSettings = async () => {
+  try {
+    await chrome.tabs.create({ url: 'chrome://extensions/shortcuts' });
+    window.close();
+  } catch (error) {
+    showMessage('Open chrome://extensions/shortcuts in the address bar.', 'error');
+  }
+};
+
+if (shortcutBtn) {
+  shortcutBtn.addEventListener('click', openShortcutSettings);
+}

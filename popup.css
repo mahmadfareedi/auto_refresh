@@ -198,3 +198,28 @@ button:disabled {
     animation-duration: 0.001ms !important;
   }
 }
+
+.shortcuts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.button.link {
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.16);
+  color: var(--accent);
+}
+
+.button.link:hover {
+  background: rgba(99, 102, 241, 0.24);
+}

@@ -2,6 +2,8 @@
 
 Lightweight controls for cache-busting reloads and per-tab auto refresh timers.
 
+![Refresh App popup](docs/ui-preview.png)
+
 ## Quick Start
 
 1. Open Chrome and go to `chrome://extensions`.
@@ -22,3 +24,9 @@ Lightweight controls for cache-busting reloads and per-tab auto refresh timers.
 Built by [meltadata.io](https://meltadata.io).
 
 If Chrome prompts for permissions, accept them so the extension can clear cache, talk to the active tab, and remember your auto-refresh preferences.
+
+### Keyboard Shortcut
+
+1. Open the popup and click **Open Shortcut Settings**, or visit `chrome://extensions/shortcuts` manually.
+2. Find the command named *Trigger Hard Refresh on the active tab*.
+3. Record the key combo you want (for example, `Ctrl+Shift+Y`). Once saved, you can trigger the same hard refresh without opening the popup.

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Refresh App",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Clear cache, trigger hard refreshes, or schedule normal reloads from a polished popup.",
   "permissions": [
     "activeTab",
@@ -27,5 +27,10 @@
     "32": "icons/refresh-32.png",
     "48": "icons/refresh-48.png",
     "128": "icons/refresh-128.png"
+  },
+  "commands": {
+    "hard-refresh-command": {
+      "description": "Trigger Hard Refresh on the active tab"
+    }
   }
 }

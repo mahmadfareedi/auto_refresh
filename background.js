@@ -295,3 +295,21 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   handle();
   return true;
 });
+
+chrome.commands.onCommand.addListener(async (command) => {
+  if (command !== 'hard-refresh-command') {
+    return;
+  }
+
+  try {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (!tab || tab.id === undefined) {
+      return;
+    }
+
+    await clearCache();
+    await chrome.tabs.reload(tab.id, { bypassCache: true });
+  } catch (error) {
+    console.error('Failed to execute hard refresh command', error);
+  }
+});
